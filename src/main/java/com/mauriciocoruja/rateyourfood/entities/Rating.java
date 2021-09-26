@@ -5,7 +5,7 @@ import com.mauriciocoruja.rateyourfood.entities.enums.Evaluation;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Table(name = "rating")
+@Table(name = "tb_rating")
 @Entity
 public class Rating implements Serializable {
     @Id
