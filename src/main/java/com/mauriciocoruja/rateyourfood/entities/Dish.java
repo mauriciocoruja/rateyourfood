@@ -16,10 +16,6 @@ public class Dish {
     private String dishName;
     private String dishDescription;
 
-    @ManyToOne
-    @JoinColumn(name = "rating_id")
-    private Rating rating;
-
     @OneToMany(mappedBy = "dish")
     private Set<Rating> ratings = new HashSet<>();
 
@@ -31,16 +27,11 @@ public class Dish {
     public Dish() {
     }
 
-    public Dish(Long id, String dishName, String dishDescription, Rating rating, Establishment establishment) {
+    public Dish(Long id, String dishName, String dishDescription, Establishment establishment) {
         this.id = id;
         this.dishName = dishName;
         this.dishDescription = dishDescription;
-        this.rating = rating;
         this.establishment = establishment;
-    }
-
-    public void setRating(Rating rating) {
-        this.rating = rating;
     }
 
     public Set<Rating> getRating() {

@@ -50,7 +50,6 @@ public class TestConfig implements CommandLineRunner {
         dishRepositories.save(dish);
         ratingRepositories.save(rating);
 
-        dish.setRating(rating);
         dishRepositories.save(dish);
 
         Rating rating1 = new Rating();
@@ -59,7 +58,7 @@ public class TestConfig implements CommandLineRunner {
         rating1.setFlavor(Evaluation.GOOD);
         ratingRepositories.save(rating1);
 
-        Dish dish1 = new Dish(null, "Batata", "Melhor batata", rating1, establishment);
+        Dish dish1 = new Dish(null, "Batata", "Melhor batata", establishment);
         dishRepositories.save(dish1);
 
         rating1.setDish(dish1);
