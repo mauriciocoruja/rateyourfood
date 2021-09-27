@@ -8,8 +8,10 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_establishment")
 public class Establishment implements Serializable {
+    public static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;

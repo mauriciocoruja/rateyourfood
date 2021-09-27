@@ -7,21 +7,44 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_dish")
 public class Dish {
+    public static final long serialVersionUID = 1L;
+
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String dishName;
     private String dishDescription;
 
-    @OneToMany
-    private Set<Rating> rating = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "rating_id")
+    private Rating rating;
+
+    @OneToMany(mappedBy = "dish")
+    private Set<Rating> ratings = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "establishment_id")
     private Establishment establishment;
 
+
+    public Dish() {
+    }
+
+    public Dish(Long id, String dishName, String dishDescription, Rating rating, Establishment establishment) {
+        this.id = id;
+        this.dishName = dishName;
+        this.dishDescription = dishDescription;
+        this.rating = rating;
+        this.establishment = establishment;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
     public Set<Rating> getRating() {
-        return rating;
+        return ratings;
     }
 
     public Establishment getEstablishment() {

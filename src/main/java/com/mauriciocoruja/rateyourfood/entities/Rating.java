@@ -8,14 +8,17 @@ import java.io.Serializable;
 @Table(name = "tb_rating")
 @Entity
 public class Rating implements Serializable {
+    public static final long serialVersionUID = 1L;
+
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Evaluation prep;
     private Evaluation flavor;
     private Evaluation appearance;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "dish_id")
     private Dish dish;
 
