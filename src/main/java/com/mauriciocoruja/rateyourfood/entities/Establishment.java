@@ -67,7 +67,6 @@ public class Establishment implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    @JsonIgnore
     public Set<Dish> getDishes() {
         return dishes;
     }
