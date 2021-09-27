@@ -1,5 +1,7 @@
 package com.mauriciocoruja.rateyourfood.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -18,6 +20,7 @@ public class Establishment implements Serializable {
     private String address;
     private String phoneNumber;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "establishment")
     private Set<Dish> dishes = new HashSet<>();
 
@@ -64,6 +67,7 @@ public class Establishment implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
+    @JsonIgnore
     public Set<Dish> getDishes() {
         return dishes;
     }
