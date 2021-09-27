@@ -42,6 +42,10 @@ public class Dish {
         return establishment;
     }
 
+    public void setEstablishment(Establishment establishment) {
+        this.establishment = establishment;
+    }
+
     public Long getId() {
         return id;
     }
@@ -64,9 +68,5 @@ public class Dish {
 
     public void setDishDescription(String dishDescription) {
         this.dishDescription = dishDescription;
-    }
-
-    public void setEstablishment(Establishment establishment) {
-        this.establishment = establishment;
     }
 }
