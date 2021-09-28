@@ -3,6 +3,7 @@ package com.mauriciocoruja.rateyourfood.entities;
 import com.mauriciocoruja.rateyourfood.entities.enums.Evaluation;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
 
 @Table(name = "tb_rating")
@@ -17,6 +18,8 @@ public class Rating implements Serializable {
     private Evaluation prep;
     private Evaluation flavor;
     private Evaluation appearance;
+    private Double averageRate;
+
 
     @ManyToOne
     @JoinColumn(name = "dish_id")
@@ -73,7 +76,11 @@ public class Rating implements Serializable {
         this.dish = dish;
     }
 
-    public Double getAverageRate(Evaluation flavor, Evaluation appearance, Evaluation prep) {
-        return (double) ((flavor.getCode() + appearance.getCode() + prep.getCode()) / 3);
+    public Double getAverageRate() {
+        return averageRate;
+    }
+
+    public void setAverageRate(int flavor, int prep, int appearance) {
+        this.averageRate = Math.floor((flavor + prep + appearance) / 3);
     }
 }

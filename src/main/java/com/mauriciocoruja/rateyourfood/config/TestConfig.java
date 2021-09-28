@@ -45,6 +45,7 @@ public class TestConfig implements CommandLineRunner {
         rating.setAppearance(Evaluation.VERY_GOOD);
         rating.setFlavor(Evaluation.GOOD);
         rating.setDish(dish);
+        rating.setAverageRate(Evaluation.BAD.getCode(),Evaluation.VERY_GOOD.getCode(),Evaluation.GOOD.getCode());
 
 
         dishRepositories.save(dish);
