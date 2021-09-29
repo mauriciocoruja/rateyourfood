@@ -8,6 +8,7 @@
 
 #JPA BUDDY
 .jpb/**/*.xml
+.jpb
 
 # User-specific stuff
 .idea/**/workspace.xml
