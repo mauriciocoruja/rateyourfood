@@ -1,5 +1,6 @@
 package com.mauriciocoruja.rateyourfood.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mauriciocoruja.rateyourfood.entities.enums.Evaluation;
 
 import javax.persistence.*;
@@ -20,7 +21,7 @@ public class Rating implements Serializable {
     private Evaluation appearance;
     private Double averageRate;
 
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "dish_id")
     private Dish dish;

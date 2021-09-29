@@ -36,7 +36,7 @@ public class Dish {
         this.establishment = establishment;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     public Set<Rating> getRating() {
         return ratings;
     }

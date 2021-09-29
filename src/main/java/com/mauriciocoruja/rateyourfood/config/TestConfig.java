@@ -57,6 +57,7 @@ public class TestConfig implements CommandLineRunner {
         rating1.setPrep(Evaluation.BAD);
         rating1.setAppearance(Evaluation.TERRIBLE);
         rating1.setFlavor(Evaluation.GOOD);
+        rating1.setAverageRate(rating1.getFlavor().getCode(),rating1.getAppearance().getCode(),rating1.getPrep().getCode());
         ratingRepositories.save(rating1);
 
         Dish dish1 = new Dish(null, "Batata", "Melhor batata", establishment);
@@ -66,9 +67,10 @@ public class TestConfig implements CommandLineRunner {
         ratingRepositories.save(rating1);
 
         Rating rating2 = new Rating();
-        rating2.setPrep(Evaluation.BAD);
-        rating2.setAppearance(Evaluation.TERRIBLE);
+        rating2.setPrep(Evaluation.EXCELLENT);
+        rating2.setAppearance(Evaluation.VERY_GOOD);
         rating2.setFlavor(Evaluation.GOOD);
+        rating2.setAverageRate(rating2.getFlavor().getCode(),rating2.getAppearance().getCode(),rating2.getPrep().getCode());
         ratingRepositories.save(rating2);
 
         rating2.setDish(dish1);
