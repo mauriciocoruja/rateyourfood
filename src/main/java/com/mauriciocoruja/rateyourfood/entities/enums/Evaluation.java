@@ -8,13 +8,13 @@ public enum Evaluation {
     VERY_GOOD(4),
     EXCELLENT(5);
 
-    private int rate;
+    private double rate;
 
-    Evaluation(int rate) {
+    Evaluation(double rate) {
         this.rate = rate;
     }
 
-    public int getCode() {
+    public double getCode() {
         return rate;
     }
 

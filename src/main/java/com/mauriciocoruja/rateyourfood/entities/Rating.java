@@ -80,7 +80,7 @@ public class Rating implements Serializable {
         return averageRate;
     }
 
-    public void setAverageRate(int flavor, int prep, int appearance) {
-        this.averageRate = Math.floor((flavor + prep + appearance) / 3);
+    public void setAverageRate(double flavor, double prep, double appearance) {
+        this.averageRate = (flavor + prep + appearance) / 3;
     }
 }
